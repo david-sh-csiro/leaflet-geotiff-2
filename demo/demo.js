@@ -2,10 +2,10 @@ $(document).ready(function () {
   // MAP
   const map = L.map("map").setView([-37, 150], 5);
   L.tileLayer(
-    "http://{s}.sm.mapstack.stamen.com/(toner-lite,$fff[difference],$fff[@23],$fff[hsl-saturation@20])/{z}/{x}/{y}.png"
+    "https://tile.openstreetmap.org/{z}/{x}/{y}.png"
   ).addTo(map);
 
-  const windSpeedUrl = "http://127.0.0.1:5500/demo/wind_speed.tif";
+  const windSpeedUrl = "https://onaci.github.io/leaflet-geotiff-2/wind_speed.tif";
   // const windSpeedUrl =
   //   "https://danwild.github.io/leaflet-geotiff-2/wind_speed.tif";
 
@@ -20,7 +20,7 @@ $(document).ready(function () {
   }).addTo(map);
 
   // VECTOR ARROW EG
-  const windDirUrl = "http://127.0.0.1:5500/demo/wind_direction.tif";
+  const windDirUrl = "https://onaci.github.io/leaflet-geotiff-2/wind_direction.tif";
   // const windDirUrl =
   //   "https://danwild.github.io/leaflet-geotiff-2/wind_direction.tif";
   const arrowRenderer = L.LeafletGeotiff.vectorArrows({
