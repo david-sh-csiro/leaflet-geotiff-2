@@ -50,7 +50,7 @@ const O = {
     colors: ["#000000", "#ffffff"],
     positions: [0, 1]
   },
-  yignbu: {
+  ylgnbu: {
     colors: ["#081d58", "#253494", "#225ea8", "#1d91c0", "#41b6c4", "#7fcdbb", "#c7e9b4", "#edf8d9", "#ffffd9"],
     positions: [0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1]
   },
@@ -58,7 +58,7 @@ const O = {
     colors: ["#00441b", "#006d2c", "#238b45", "#41ab5d", "#74c476", "#a1d99b", "#c7e9c0", "#e5f5e0", "#f7fcf5"],
     positions: [0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1]
   },
-  yiorrd: {
+  ylorrd: {
     colors: ["#800026", "#bd0026", "#e31a1c", "#fc4e2a", "#fd8d3c", "#feb24c", "#fed976", "#ffeda0", "#ffffcc"],
     positions: [0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1]
   },
@@ -130,7 +130,7 @@ const O = {
   }
 };
 var K, c5;
-function $5() {
+function L5() {
   if (c5) return K;
   c5 = 1;
   function s(r, l) {
@@ -209,7 +209,7 @@ function $5() {
   };
   function i(r, l) {
     l = l !== void 0 ? l : {};
-    var e = {}, g = { Expression: z }, m = z, A = "+", y = "-", b = "*", S = "/", d = "**", p = "(", v = ")", _ = /^[\-+]/, x = /^[0-9]/, F = /^[a-zA-Z_$]/, R = /^[a-zA-Z_$0-9]/, C = /^[ \t\n\r]/, N = P("+", !1), M = P("-", !1), X = P("*", !1), e5 = P("/", !1), t5 = P("**", !1), a5 = P("(", !1), r5 = P(")", !1), g5 = W("float"), m5 = W("integer"), C5 = W("identifier"), D5 = W("whitespace"), E5 = function(o, n) {
+    var e = {}, g = { Expression: z }, m = z, A = "+", y = "-", b = "*", S = "/", d = "**", p = "(", v = ")", _ = /^[\-+]/, x = /^[0-9]/, T = /^[a-zA-Z_$]/, R = /^[a-zA-Z_$0-9]/, C = /^[ \t\n\r]/, N = P("+", !1), M = P("-", !1), X = P("*", !1), e5 = P("/", !1), t5 = P("**", !1), a5 = P("(", !1), r5 = P(")", !1), m5 = W("float"), C5 = W("integer"), D5 = W("identifier"), E5 = W("whitespace"), v5 = function(o, n) {
       var c = o, f, u;
       for (f = 0; f < n.length; f++)
         u = n[f][1], c = n5(c, n[f][3], u);
@@ -219,15 +219,15 @@ function $5() {
       for (f = 0; f < n.length; f++)
         u = n[f][1], c = n5(c, n[f][3], u);
       return c;
-    }, v5 = function(o) {
+    }, A5 = function(o) {
       return o;
-    }, A5 = function(o, n) {
+    }, x5 = function(o, n) {
       return { fn: o, lhs: n };
-    }, x5 = function() {
-      return parseFloat(Y(), 10);
     }, _5 = function() {
-      return parseInt(Y(), 10);
+      return parseFloat(Y(), 10);
     }, B5 = function() {
+      return parseInt(Y(), 10);
+    }, w5 = function() {
       return Y();
     }, t = 0, $ = 0, V = [{ line: 1, column: 1 }], H = [], B = 0, j;
     if ("startRule" in l) {
@@ -241,7 +241,7 @@ function $5() {
     function P(o, n) {
       return { type: "literal", text: o, ignoreCase: n };
     }
-    function w5() {
+    function b5() {
       return { type: "end" };
     }
     function W(o) {
@@ -260,10 +260,10 @@ function $5() {
         r.charCodeAt(c) === 10 ? (n.line++, n.column = 1) : n.column++, c++;
       return V[o] = n, n;
     }
-    var b5 = typeof l.filename == "string" && l.filename.length > 0;
+    var y5 = typeof l.filename == "string" && l.filename.length > 0;
     function s5(o, n) {
       var c = {};
-      b5 && (c.filename = l.filename);
+      y5 && (c.filename = l.filename);
       var f = i5(o);
       c.start = {
         offset: o,
@@ -277,14 +277,14 @@ function $5() {
         column: u.column
       }, c;
     }
-    function y5() {
+    function T5() {
       H.push({ pos: t, variants: [] });
     }
     function U(o) {
       var n = H[H.length - 1];
       t < n.pos || (t > n.pos && (n.pos = t, n.variants = []), n.variants.push(o));
     }
-    function T5(o, n, c) {
+    function F5(o, n, c) {
       return new a(
         a.buildMessage(o, n),
         o,
@@ -292,45 +292,45 @@ function $5() {
         c
       );
     }
-    function F5() {
+    function S5() {
       var o = H[0], n = o.pos;
-      return T5(
+      return F5(
         o.variants,
         n < r.length ? r.charAt(n) : null,
         n < r.length ? s5(n, n + 1) : s5(n, n)
       );
     }
     function z() {
-      var o, n, c, f, u, h, E, D, T = function(G) {
+      var o, n, c, f, u, h, E, D, F = function(G) {
         B === 0 && U(G);
       };
       if (o = t, n = q(), n !== e) {
-        for (c = [], f = t, u = w(), T(N), r.charCodeAt(t) === 43 ? (h = A, t++) : h = e, h === e && (T(M), r.charCodeAt(t) === 45 ? (h = y, t++) : h = e), h !== e ? (E = w(), D = q(), D !== e ? (u = [u, h, E, D], f = u) : (t = f, f = e)) : (t = f, f = e); f !== e; )
-          c.push(f), f = t, u = w(), T(N), r.charCodeAt(t) === 43 ? (h = A, t++) : h = e, h === e && (T(M), r.charCodeAt(t) === 45 ? (h = y, t++) : h = e), h !== e ? (E = w(), D = q(), D !== e ? (u = [u, h, E, D], f = u) : (t = f, f = e)) : (t = f, f = e);
-        $ = o, o = E5(n, c);
+        for (c = [], f = t, u = w(), F(N), r.charCodeAt(t) === 43 ? (h = A, t++) : h = e, h === e && (F(M), r.charCodeAt(t) === 45 ? (h = y, t++) : h = e), h !== e ? (E = w(), D = q(), D !== e ? (u = [u, h, E, D], f = u) : (t = f, f = e)) : (t = f, f = e); f !== e; )
+          c.push(f), f = t, u = w(), F(N), r.charCodeAt(t) === 43 ? (h = A, t++) : h = e, h === e && (F(M), r.charCodeAt(t) === 45 ? (h = y, t++) : h = e), h !== e ? (E = w(), D = q(), D !== e ? (u = [u, h, E, D], f = u) : (t = f, f = e)) : (t = f, f = e);
+        $ = o, o = v5(n, c);
       } else
         t = o, o = e;
       return o;
     }
     function q() {
-      var o, n, c, f, u, h, E, D, T = function(G) {
+      var o, n, c, f, u, h, E, D, F = function(G) {
         B === 0 && U(G);
       };
       if (o = t, n = Z(), n !== e) {
-        for (c = [], f = t, u = w(), T(X), r.charCodeAt(t) === 42 ? (h = b, t++) : h = e, h === e && (T(e5), r.charCodeAt(t) === 47 ? (h = S, t++) : h = e), h !== e ? (E = w(), D = Z(), D !== e ? (u = [u, h, E, D], f = u) : (t = f, f = e)) : (t = f, f = e); f !== e; )
-          c.push(f), f = t, u = w(), T(X), r.charCodeAt(t) === 42 ? (h = b, t++) : h = e, h === e && (T(e5), r.charCodeAt(t) === 47 ? (h = S, t++) : h = e), h !== e ? (E = w(), D = Z(), D !== e ? (u = [u, h, E, D], f = u) : (t = f, f = e)) : (t = f, f = e);
+        for (c = [], f = t, u = w(), F(X), r.charCodeAt(t) === 42 ? (h = b, t++) : h = e, h === e && (F(e5), r.charCodeAt(t) === 47 ? (h = S, t++) : h = e), h !== e ? (E = w(), D = Z(), D !== e ? (u = [u, h, E, D], f = u) : (t = f, f = e)) : (t = f, f = e); f !== e; )
+          c.push(f), f = t, u = w(), F(X), r.charCodeAt(t) === 42 ? (h = b, t++) : h = e, h === e && (F(e5), r.charCodeAt(t) === 47 ? (h = S, t++) : h = e), h !== e ? (E = w(), D = Z(), D !== e ? (u = [u, h, E, D], f = u) : (t = f, f = e)) : (t = f, f = e);
         $ = o, o = o5(n, c);
       } else
         t = o, o = e;
       return o;
     }
     function Z() {
-      var o, n, c, f, u, h, E, D, T = function(G) {
+      var o, n, c, f, u, h, E, D, F = function(G) {
         B === 0 && U(G);
       };
       if (o = t, n = J(), n !== e) {
-        for (c = [], f = t, u = w(), T(t5), r.substr(t, 2) === d ? (h = d, t += 2) : h = e, h !== e ? (E = w(), D = J(), D !== e ? (u = [u, h, E, D], f = u) : (t = f, f = e)) : (t = f, f = e); f !== e; )
-          c.push(f), f = t, u = w(), T(t5), r.substr(t, 2) === d ? (h = d, t += 2) : h = e, h !== e ? (E = w(), D = J(), D !== e ? (u = [u, h, E, D], f = u) : (t = f, f = e)) : (t = f, f = e);
+        for (c = [], f = t, u = w(), F(t5), r.substr(t, 2) === d ? (h = d, t += 2) : h = e, h !== e ? (E = w(), D = J(), D !== e ? (u = [u, h, E, D], f = u) : (t = f, f = e)) : (t = f, f = e); f !== e; )
+          c.push(f), f = t, u = w(), F(t5), r.substr(t, 2) === d ? (h = d, t += 2) : h = e, h !== e ? (E = w(), D = J(), D !== e ? (u = [u, h, E, D], f = u) : (t = f, f = e)) : (t = f, f = e);
         $ = o, o = o5(n, c);
       } else
         t = o, o = e;
@@ -340,13 +340,13 @@ function $5() {
       var o, n, c, f, u, h, E = function(D) {
         B === 0 && U(D);
       };
-      return o = t, E(a5), r.charCodeAt(t) === 40 ? (n = p, t++) : n = e, n !== e ? (c = w(), f = z(), f !== e ? (u = w(), E(r5), r.charCodeAt(t) === 41 ? (h = v, t++) : h = e, h !== e ? ($ = o, o = v5(f)) : (t = o, o = e)) : (t = o, o = e)) : (t = o, o = e), o === e && (o = S5(), o === e && (o = R5(), o === e && (o = t, n = f5(), n !== e ? (E(a5), r.charCodeAt(t) === 40 ? (c = p, t++) : c = e, c !== e ? (f = z(), f !== e ? (E(r5), r.charCodeAt(t) === 41 ? (u = v, t++) : u = e, u !== e ? ($ = o, o = A5(n, f)) : (t = o, o = e)) : (t = o, o = e)) : (t = o, o = e)) : (t = o, o = e), o === e && (o = f5())))), o;
+      return o = t, E(a5), r.charCodeAt(t) === 40 ? (n = p, t++) : n = e, n !== e ? (c = w(), f = z(), f !== e ? (u = w(), E(r5), r.charCodeAt(t) === 41 ? (h = v, t++) : h = e, h !== e ? ($ = o, o = A5(f)) : (t = o, o = e)) : (t = o, o = e)) : (t = o, o = e), o === e && (o = R5(), o === e && (o = $5(), o === e && (o = t, n = f5(), n !== e ? (E(a5), r.charCodeAt(t) === 40 ? (c = p, t++) : c = e, c !== e ? (f = z(), f !== e ? (E(r5), r.charCodeAt(t) === 41 ? (u = v, t++) : u = e, u !== e ? ($ = o, o = x5(n, f)) : (t = o, o = e)) : (t = o, o = e)) : (t = o, o = e)) : (t = o, o = e), o === e && (o = f5())))), o;
     }
-    function S5() {
+    function R5() {
       var o, n, c, f, u, h, E = function(D) {
         B === 0 && U(D);
       };
-      for (E(g5), B++, o = t, n = [], _.test(r.charAt(t)) ? (c = r.charAt(t), t++) : c = e; c !== e; )
+      for (E(m5), B++, o = t, n = [], _.test(r.charAt(t)) ? (c = r.charAt(t), t++) : c = e; c !== e; )
         n.push(c), _.test(r.charAt(t)) ? (c = r.charAt(t), t++) : c = e;
       if (c = [], x.test(r.charAt(t)) ? (f = r.charAt(t), t++) : f = e, f !== e)
         for (; f !== e; )
@@ -360,36 +360,36 @@ function $5() {
               u.push(h), x.test(r.charAt(t)) ? (h = r.charAt(t), t++) : h = e;
           else
             u = e;
-          u !== e ? ($ = o, o = x5()) : (t = o, o = e);
+          u !== e ? ($ = o, o = _5()) : (t = o, o = e);
         } else
           t = o, o = e;
       else
         t = o, o = e;
       return B--, o;
     }
-    function R5() {
+    function $5() {
       var o, n, c, f, u = function(h) {
         B === 0 && U(h);
       };
-      for (u(m5), B++, o = t, n = [], _.test(r.charAt(t)) ? (c = r.charAt(t), t++) : c = e; c !== e; )
+      for (u(C5), B++, o = t, n = [], _.test(r.charAt(t)) ? (c = r.charAt(t), t++) : c = e; c !== e; )
         n.push(c), _.test(r.charAt(t)) ? (c = r.charAt(t), t++) : c = e;
       if (c = [], x.test(r.charAt(t)) ? (f = r.charAt(t), t++) : f = e, f !== e)
         for (; f !== e; )
           c.push(f), x.test(r.charAt(t)) ? (f = r.charAt(t), t++) : f = e;
       else
         c = e;
-      return c !== e ? ($ = o, o = _5()) : (t = o, o = e), B--, o;
+      return c !== e ? ($ = o, o = B5()) : (t = o, o = e), B--, o;
     }
     function f5() {
       var o, n, c, f, u, h = function(E) {
         B === 0 && U(E);
       };
-      for (h(C5), B++, o = t, n = [], _.test(r.charAt(t)) ? (c = r.charAt(t), t++) : c = e; c !== e; )
+      for (h(D5), B++, o = t, n = [], _.test(r.charAt(t)) ? (c = r.charAt(t), t++) : c = e; c !== e; )
         n.push(c), _.test(r.charAt(t)) ? (c = r.charAt(t), t++) : c = e;
-      if (F.test(r.charAt(t)) ? (c = r.charAt(t), t++) : c = e, c !== e) {
+      if (T.test(r.charAt(t)) ? (c = r.charAt(t), t++) : c = e, c !== e) {
         for (f = [], R.test(r.charAt(t)) ? (u = r.charAt(t), t++) : u = e; u !== e; )
           f.push(u), R.test(r.charAt(t)) ? (u = r.charAt(t), t++) : u = e;
-        $ = o, o = B5();
+        $ = o, o = w5();
       } else
         t = o, o = e;
       return B--, o;
@@ -398,7 +398,7 @@ function $5() {
       var o, n, c = function(f) {
         B === 0 && U(f);
       };
-      for (c(D5), B++, o = [], C.test(r.charAt(t)) ? (n = r.charAt(t), t++) : n = e; n !== e; )
+      for (c(E5), B++, o = [], C.test(r.charAt(t)) ? (n = r.charAt(t), t++) : n = e; n !== e; )
         o.push(n), C.test(r.charAt(t)) ? (n = r.charAt(t), t++) : n = e;
       return B--, o;
     }
@@ -422,23 +422,23 @@ function $5() {
         op: c
       };
     }
-    if (y5(), j = m(), j !== e && t === r.length)
+    if (T5(), j = m(), j !== e && t === r.length)
       return j;
-    throw j !== e && t < r.length && U(w5()), F5();
+    throw j !== e && t < r.length && U(b5()), S5();
   }
   return K = {
     SyntaxError: a,
     parse: i
   }, K;
 }
-var L5 = $5();
+var U5 = L5();
 function l5(s, a) {
   return Object.prototype.hasOwnProperty.call(s, a);
 }
 function I(s, a) {
   return typeof s < "u" ? s : a;
 }
-function U5(s, a) {
+function u5(s, a) {
   const i = ["webgl", "experimental-webgl"];
   let r = null;
   for (let l = 0; l < i.length; ++l) {
@@ -451,7 +451,7 @@ function U5(s, a) {
   }
   return !r || !r.getExtension("OES_texture_float") ? null : r;
 }
-function u5(s, a, i) {
+function h5(s, a, i) {
   const r = s.createShader(s.VERTEX_SHADER);
   if (s.shaderSource(r, a), s.compileShader(r), !s.getShaderParameter(r, s.COMPILE_STATUS))
     throw new Error(s.getShaderInfoLog(r));
@@ -478,7 +478,7 @@ function I5(s, a, i, r, l) {
     A
   ]), s.STATIC_DRAW);
 }
-function h5(s, a, i, r, l) {
+function p5(s, a, i, r, l) {
   let e;
   return s && (s.viewport(0, 0, r, l), e = s.createTexture(), s.bindTexture(s.TEXTURE_2D, e), s.texParameteri(s.TEXTURE_2D, s.TEXTURE_WRAP_S, s.CLAMP_TO_EDGE), s.texParameteri(s.TEXTURE_2D, s.TEXTURE_WRAP_T, s.CLAMP_TO_EDGE), s.texParameteri(s.TEXTURE_2D, s.TEXTURE_MIN_FILTER, s.NEAREST), s.texParameteri(s.TEXTURE_2D, s.TEXTURE_MAG_FILTER, s.NEAREST), s.texImage2D(
     s.TEXTURE_2D,
@@ -500,7 +500,7 @@ function P5(s, a, i) {
     throw new Error("Invalid color scale.");
   O[s] = { colors: a, positions: i };
 }
-function d5(s, a) {
+function g5(s, a) {
   const i = O[s];
   a.height = 1;
   const r = a.getContext("2d");
@@ -517,7 +517,7 @@ function d5(s, a) {
   } else
     throw new Error("Color scale not defined.");
 }
-const p5 = `
+const d5 = `
 attribute vec2 a_position;
 attribute vec2 a_texCoord;
 uniform mat3 u_matrix;
@@ -550,12 +550,17 @@ uniform bool u_clampLow;
 uniform bool u_clampHigh;
 // the texCoords passed in from the vertex shader.
 varying vec2 v_texCoord;
+
+bool isnan( float val ) {
+  return ( val < 0.0 || 0.0 < val || val == 0.0 ) ? false : true;
+}
+
 void main() {
   vec2 onePixel = vec2(1.0, 1.0) / u_textureSize;
   float value = texture2D(u_textureData, v_texCoord)[0];
   if(value < -3.402823466e+38) // Check for possible NaN value
     gl_FragColor = vec4(0.0, 0, 0, 0.0);
-  else if (value == u_noDataValue)
+  else if (value == u_noDataValue || isnan(value))
     gl_FragColor = vec4(0.0, 0, 0, 0.0);
   else if (u_apply_display_range && (value < u_display_range[0] || value >= u_display_range[1]))
         gl_FragColor = vec4(0.0, 0, 0, 0.0);
@@ -568,39 +573,41 @@ void main() {
 }`;
 class k {
   constructor(a) {
-    this.datasetCollection = {}, this.currentDataset = null, this.setCanvas(a.canvas);
-    let i;
-    if (I(a.useWebGL, !0) && (i = U5(this.canvas))) {
-      this.gl = i, this.program = u5(i, p5, M5), i.useProgram(this.program);
-      const r = i.getAttribLocation(this.program, "a_texCoord");
-      this.texCoordBuffer = i.createBuffer(), i.bindBuffer(i.ARRAY_BUFFER, this.texCoordBuffer), i.bufferData(i.ARRAY_BUFFER, new Float32Array([
-        0,
-        0,
-        1,
-        0,
-        0,
-        1,
-        0,
-        1,
-        1,
-        0,
-        1,
-        1
-      ]), i.STATIC_DRAW), i.enableVertexAttribArray(r), i.vertexAttribPointer(r, 2, i.FLOAT, !1, 0, 0);
-    } else
+    if (this.datasetCollection = {}, this.currentDataset = null, this.setCanvas(a.canvas), I(a.useWebGL, !0))
+      if (u5(document.createElement("canvas"), { premultipliedAlpha: !1 }) !== null) {
+        const i = u5(this.canvas, { premultipliedAlpha: !1 });
+        this.gl = i, this.program = h5(i, d5, M5), i.useProgram(this.program);
+        const r = i.getAttribLocation(this.program, "a_texCoord");
+        this.texCoordBuffer = i.createBuffer(), i.bindBuffer(i.ARRAY_BUFFER, this.texCoordBuffer), i.bufferData(i.ARRAY_BUFFER, new Float32Array([
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1
+        ]), i.STATIC_DRAW), i.enableVertexAttribArray(r), i.vertexAttribPointer(r, 2, i.FLOAT, !1, 0, 0);
+      } else
+        this.ctx = this.canvas.getContext("2d");
+    else
       this.ctx = this.canvas.getContext("2d");
     if (a.colorScaleImage ? this.setColorScaleImage(a.colorScaleImage) : this.setColorScale(I(a.colorScale, "viridis")), this.setDomain(I(a.domain, [0, 1])), this.displayRange = I(a.displayRange, [0, 1]), this.applyDisplayRange = I(a.applyDisplayRange, !1), this.setClamp(I(a.clampLow, !0), a.clampHigh), this.setNoDataValue(a.noDataValue), a.data) {
-      const r = a.data.length;
+      const i = a.data.length;
       this.setData(
         a.data,
-        I(a.width, a.data[r - 2]),
-        I(a.height, a.data[r - 2])
+        I(a.width, a.data[i - 2]),
+        I(a.height, a.data[i - 2])
       );
     }
     if (a.datasets)
-      for (let r = 0; r < a.datasets.length; ++r) {
-        const l = a.datasets[r];
-        this.addDataset(l.id, l.data, l.width, l.height);
+      for (let i = 0; i < a.datasets.length; ++i) {
+        const r = a.datasets[i];
+        this.addDataset(r.id, r.data, r.width, r.height);
       }
     a.matrix ? this.matrix = a.matrix : this.matrix = [
       1,
@@ -647,7 +654,7 @@ class k {
    * @param {int} height the height of the data
    */
   setData(a, i, r) {
-    this.currentDataset && this.currentDataset.id === null && Q(this.gl, this.currentDataset), this.currentDataset = h5(this.gl, null, a, i, r);
+    this.currentDataset && this.currentDataset.id === null && Q(this.gl, this.currentDataset), this.currentDataset = p5(this.gl, null, a, i, r);
   }
   /**
    * Add a new named dataset. The semantics are the same as with @see setData.
@@ -661,7 +668,7 @@ class k {
   addDataset(a, i, r, l) {
     if (this.datasetAvailable(a))
       throw new Error(`There is already a dataset registered with id '${a}'`);
-    this.datasetCollection[a] = h5(this.gl, a, i, r, l), this.currentDataset || (this.currentDataset = this.datasetCollection[a]);
+    this.datasetCollection[a] = p5(this.gl, a, i, r, l), this.currentDataset || (this.currentDataset = this.datasetCollection[a]);
   }
   /**
    * Set the current dataset to be rendered.
@@ -739,7 +746,7 @@ class k {
   setColorScale(a) {
     if (!l5(O, a))
       throw new Error(`No such color scale '${a}'`);
-    this.colorScaleCanvas || (this.colorScaleCanvas = document.createElement("canvas"), this.colorScaleCanvas.width = 256, this.colorScaleCanvas.height = 1), d5(a, this.colorScaleCanvas), this.name = a, this.setColorScaleImage(this.colorScaleCanvas);
+    this.colorScaleCanvas || (this.colorScaleCanvas = document.createElement("canvas"), this.colorScaleCanvas.width = 256, this.colorScaleCanvas.height = 1), g5(a, this.colorScaleCanvas), this.name = a, this.setColorScaleImage(this.colorScaleCanvas);
   }
   /**
    * Set the clamping for the lower and the upper border of the values. When
@@ -787,7 +794,7 @@ class k {
     if (this.gl) {
       const e = this.gl;
       if (e.viewport(0, 0, i.width, i.height), this.expressionAst) {
-        const x = (C) => typeof C == "object" ? C.op === "**" ? `pow(${x(C.lhs)}, ${x(C.rhs)})` : C.fn ? `(${C.fn}(${x(C.lhs)}))` : `(${x(C.lhs)} ${C.op} ${x(C.rhs)})` : typeof C == "string" ? `${C}_value` : `float(${C})`, F = x(this.expressionAst), R = `
+        const x = (C) => typeof C == "object" ? C.op === "**" ? `pow(${x(C.lhs)}, ${x(C.rhs)})` : C.fn ? `(${C.fn}(${x(C.lhs)}))` : `(${x(C.lhs)} ${C.op} ${x(C.rhs)})` : typeof C == "string" ? `${C}_value` : `float(${C})`, T = x(this.expressionAst), R = `
         precision mediump float;
         // our texture
         uniform sampler2D u_textureScale;
@@ -806,7 +813,7 @@ ${r.map((C) => `        uniform sampler2D u_texture_${C};`).join(`
         void main() {
 ${r.map((C) => `          float ${C}_value = texture2D(u_texture_${C}, v_texCoord)[0];`).join(`
 `)}
-          float value = ${F};
+          float value = ${T};
 
           if (value == u_noDataValue)
             gl_FragColor = vec4(0.0, 0, 0, 0.0);
@@ -817,7 +824,7 @@ ${r.map((C) => `          float ${C}_value = texture2D(u_texture_${C}, v_texCoor
             gl_FragColor = texture2D(u_textureScale, vec2(normalisedValue, 0));
           }
         }`;
-        l = u5(e, p5, R), e.useProgram(l), e.uniform1i(e.getUniformLocation(l, "u_textureScale"), 0), e.activeTexture(e.TEXTURE0), e.bindTexture(e.TEXTURE_2D, this.textureScale);
+        l = h5(e, d5, R), e.useProgram(l), e.uniform1i(e.getUniformLocation(l, "u_textureScale"), 0), e.activeTexture(e.TEXTURE0), e.bindTexture(e.TEXTURE_2D, this.textureScale);
         for (let C = 0; C < r.length; ++C) {
           const N = C + 1, M = r[C], X = this.datasetCollection[M];
           if (!X)
@@ -843,10 +850,10 @@ ${r.map((C) => `          float ${C}_value = texture2D(u_texture_${C}, v_texCoor
       for (let v = 0; v < m; v++)
         for (let _ = 0; _ < g; _++) {
           const x = v * g + _;
-          let F = Math.floor((p[x] - this.domain[0]) / y * (b - 1));
-          d = 255, F < 0 ? (F = 0, this.clampLow || (d = 0)) : F > 255 && (F = 255, this.clampHigh || (d = 0)), (p[x] === this.noDataValue || p[x] !== p[x] || this.applyDisplayRange && (p[x] < this.displayRange[0] || p[x] >= this.displayRange[1])) && (d = 0);
+          let T = Math.floor((p[x] - this.domain[0]) / y * (b - 1));
+          d = 255, T < 0 ? (T = 0, this.clampLow || (d = 0)) : T > 255 && (T = 255, this.clampHigh || (d = 0)), (p[x] === this.noDataValue || p[x] !== p[x] || this.applyDisplayRange && (p[x] < this.displayRange[0] || p[x] >= this.displayRange[1])) && (d = 0);
           const R = (v * g + _) * 4;
-          A.data[R + 0] = S[F * 4], A.data[R + 1] = S[F * 4 + 1], A.data[R + 2] = S[F * 4 + 2], A.data[R + 3] = d;
+          A.data[R + 0] = S[T * 4], A.data[R + 1] = S[T * 4 + 1], A.data[R + 2] = S[T * 4 + 2], A.data[R + 3] = Math.min(d, S[T * 4 + 3]);
         }
       e.putImageData(A, 0, 0);
     }
@@ -880,7 +887,7 @@ ${r.map((C) => `          float ${C}_value = texture2D(u_texture_${C}, v_texCoor
    * @param {string} expression Mathematical expression. Example: '-2 * sin(3.1415 - dataset1) ** 2'
    */
   setExpression(a) {
-    !a || !a.length ? this.expressionAst = null : this.expressionAst = L5.parse(a);
+    !a || !a.length ? this.expressionAst = null : this.expressionAst = U5.parse(a);
   }
 }
 const N5 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
@@ -888,7 +895,7 @@ const N5 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   addColorScale: P5,
   colorscales: O,
   plot: k,
-  renderColorScaleToCanvas: d5
+  renderColorScaleToCanvas: g5
 }, Symbol.toStringTag, { value: "Module" }));
 L.LeafletGeotiff.Plotty = L.LeafletGeotiffRenderer.extend({
   options: {
