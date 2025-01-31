@@ -18,9 +18,9 @@ There are no other plans for changes to licensing, and the project will remain o
 
 Dependencies must be loaded:
 
-- [Leaflet >= 0.7.7](http://leafletjs.com)
+- [Leaflet >= 1.0.0](http://leafletjs.com)
 - [geotiff.js == 2.1.3](https://github.com/constantinius/geotiff.js)
-- [plotty >= 0.4.4](https://github.com/santilland/plotty) (optional)
+- [plotty >= 0.4.9](https://github.com/santilland/plotty) (optional)
 
 ```javascript
 import "leaflet-geotiff-2";
