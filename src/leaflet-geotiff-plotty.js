@@ -1,7 +1,7 @@
 // Depends on:
 // https://github.com/santilland/plotty
 
-import plotty from "plotty";
+import * as plotty from "plotty";
 
 L.LeafletGeotiff.Plotty = L.LeafletGeotiffRenderer.extend({
   options: {

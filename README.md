@@ -18,9 +18,9 @@ There are no other plans for changes to licensing, and the project will remain o
 
 Dependencies must be loaded:
 
-- [Leaflet >= 0.7.7](http://leafletjs.com)
-- [geotiff.js == 1.0.0-beta.13](https://github.com/constantinius/geotiff.js)
-- [plotty >= 0.4.4](https://github.com/santilland/plotty) (optional)
+- [Leaflet >= 1.0.0](http://leafletjs.com)
+- [geotiff.js == 2.1.3](https://github.com/constantinius/geotiff.js)
+- [plotty >= 0.4.9](https://github.com/santilland/plotty) (optional)
 
 ```javascript
 import "leaflet-geotiff-2";
@@ -201,6 +201,14 @@ const renderer = L.LeafletGeotiff.vectorArrows(options);
 ```shell
 npm install
 npm run build
+```
+
+## Development
+
+Runs the demo website with dynamic reloading when changing source files.
+
+```shell
+npm run dev
 ```
 
 ## What about the original leaflet-geotiff?
