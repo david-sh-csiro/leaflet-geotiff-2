@@ -26,9 +26,9 @@ Dependencies must be loaded:
 import "leaflet-geotiff-2";
 
 // optional renderers
-import "leaflet-geotiff-2/dist/leaflet-geotiff-rgb";
-import "leaflet-geotiff-2/dist/leaflet-geotiff-vector-arrows";
-import "leaflet-geotiff-2/dist/leaflet-geotiff-plotty"; // requires plotty
+import "leaflet-geotiff-2/leaflet-geotiff-rgb";
+import "leaflet-geotiff-2/leaflet-geotiff-vector-arrows";
+import "leaflet-geotiff-2/leaflet-geotiff-plotty"; // requires plotty
 ```
 
 ### 2. Add a geoTIFF layer
